@@ -2,10 +2,10 @@ FROM python:3
 
 WORKDIR /app
 
-RUN pip install fastapi requests
+RUN pip install fastapi requests uvicorn
 
 COPY ./app ./app
 
 EXPOSE 8000
 
-CMD ["fastapi", "run", "app/main.py", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--port", "8000"]
