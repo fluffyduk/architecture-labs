@@ -1,11 +1,10 @@
+version: "3.9"
+
 services:
-  api:
-    build:
-      context: .
-      target: builder
-    container_name: fastapi-application
-    environment:
-      PORT: 8000
+  myip-service:
+    build: .
+    container_name: myip-service
     ports:
-      - '8000:8000'
-    restart: "no"
+      - "8000:8000"
+    environment:
+      - TYPE=ipapi   # можно поменять на jsonip
