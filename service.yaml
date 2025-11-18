@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myip-service
+spec:
+  selector:
+    app: myip
+  ports:
+    - protocol: TCP
+      port: 80        # порт сервиса внутри кластера
+      targetPort: 8000 # порт контейнера
+  type: ClusterIP

@@ -7,4 +7,4 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - TYPE=ipapi   # можно поменять на jsonip
+      - TYPE=ipapi
